@@ -1,9 +1,10 @@
 .table-content {
   width: 90%;
+  min-height: 78vh;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0.2rem;
-  @include flex(column, center, start);
+  @include flex(column, start, start);
 
   padding: 2rem;
   h1 {
@@ -32,5 +33,9 @@
     .theater {
       width: 12rem;
     }
+  }
+
+  .submit {
+    margin: 2rem 0;
   }
 }

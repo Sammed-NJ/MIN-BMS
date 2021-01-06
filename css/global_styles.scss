@@ -44,7 +44,8 @@ $font2: "Yellowtail", cursive;
 }
 
 .order,
-.submit {
+.submit,
+.cancel {
   border: none;
   border-radius: 0.2rem;
   cursor: pointer;
@@ -55,23 +56,34 @@ $font2: "Yellowtail", cursive;
 
 .order {
   color: white;
-  background-color: green;
+  background-color: #139942;
   width: 7rem;
   height: 2.4rem;
   padding: 0 1rem;
   &:hover {
-    background-color: rgb(0, 92, 0);
+    background-color: #128f3d;
+  }
+}
+
+.cancel {
+  color: white;
+  background-color: rgb(255, 53, 53);
+  width: 7rem;
+  height: 2.4rem;
+  padding: 0 1rem;
+  &:hover {
+    background-color: rgb(230, 49, 49);
   }
 }
 
 .submit {
-  color: black;
-  background-color: rgb(36, 204, 255);
+  color: rgb(255, 255, 255);
+  background-color: #3273dc;
   width: 7rem;
   height: 2.2rem;
   padding: 0 1rem;
   &:hover {
-    background-color: rgb(0, 173, 226);
+    background-color: #1a56b6;
   }
 }
 

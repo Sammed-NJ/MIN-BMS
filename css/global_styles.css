@@ -130,6 +130,7 @@ body {
 
 .table-content {
   width: 90%;
+  min-height: 78vh;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0.2rem;
@@ -140,9 +141,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
@@ -182,6 +183,10 @@ body {
 
 .table-content table .theater {
   width: 12rem;
+}
+
+.table-content .submit {
+  margin: 2rem 0;
 }
 
 .content-log,
@@ -323,7 +328,8 @@ body {
 }
 
 .order,
-.submit {
+.submit,
+.cancel {
   border: none;
   border-radius: 0.2rem;
   cursor: pointer;
@@ -334,26 +340,38 @@ body {
 
 .order {
   color: white;
-  background-color: green;
+  background-color: #139942;
   width: 7rem;
   height: 2.4rem;
   padding: 0 1rem;
 }
 
 .order:hover {
-  background-color: #005c00;
+  background-color: #128f3d;
+}
+
+.cancel {
+  color: white;
+  background-color: #ff3535;
+  width: 7rem;
+  height: 2.4rem;
+  padding: 0 1rem;
+}
+
+.cancel:hover {
+  background-color: #e63131;
 }
 
 .submit {
-  color: black;
-  background-color: #24ccff;
+  color: white;
+  background-color: #3273dc;
   width: 7rem;
   height: 2.2rem;
   padding: 0 1rem;
 }
 
 .submit:hover {
-  background-color: #00ade2;
+  background-color: #1a56b6;
 }
 
 input {
