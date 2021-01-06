@@ -1,0 +1,53 @@
+.content-log,
+.content-sign {
+  min-height: 78vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.2rem;
+  padding: 2rem;
+  width: 50%;
+  margin: auto;
+  font-family: $font1;
+  color: white;
+  @include flex(column, center, center);
+  h1 {
+    font-size: 4rem;
+  }
+
+  form {
+    @include flex(column, center, start);
+    width: 55%;
+    label {
+      font-size: 1.4rem;
+    }
+    .name-box,
+    .email-box,
+    .password-box,
+    .submit-box {
+      width: 100%;
+      margin: auto;
+      @include flex(row, space-between, center);
+      padding: 2rem 0;
+      input {
+        width: 20rem;
+        height: 3rem;
+      }
+    }
+    .submit-box button {
+      width: 8rem;
+      height: 2.7rem;
+    }
+    .submit-box span {
+      color: rgb(0, 0, 172);
+      text-decoration: underline;
+      font-weight: 600;
+      cursor: pointer;
+      &:hover {
+        color: blue;
+      }
+    }
+  }
+}
+
+.hide {
+  display: none;
+}

@@ -1,0 +1,405 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+
+.navbar {
+  min-height: 10vh;
+}
+
+.navbar .container {
+  width: 90%;
+  margin: auto;
+  padding: 2rem 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 28% 2%;
+      grid-template-columns: 70% 28% 2%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 1rem;
+}
+
+.navbar .container .nav-logo {
+  font-family: "Yellowtail", cursive;
+  font-size: 2rem;
+}
+
+.navbar .container .nav-logo a {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar .container .nav-list {
+  font-size: 1.4rem;
+  font-family: "Poppins", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.navbar .container .nav-list a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar .container .nav-list a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  min-height: 78vh;
+  width: 50%;
+  margin: auto;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.content h1 {
+  font-size: 4rem;
+  margin: 1rem 0;
+}
+
+.content p {
+  font-size: 1.2rem;
+}
+
+.content span {
+  color: #ff00bf;
+  text-decoration: underline;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  min-height: 10vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.table-content {
+  width: 90%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.table-content h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 4rem;
+  color: white;
+}
+
+.table-content table {
+  border-collapse: collapse;
+  width: 100%;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+.table-content table thead {
+  background-color: #252525;
+}
+
+.table-content table th,
+.table-content table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.table-content table td {
+  padding: 1rem;
+}
+
+.table-content table .theater {
+  width: 12rem;
+}
+
+.content-log,
+.content-sign {
+  min-height: 78vh;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.2rem;
+  padding: 2rem;
+  width: 50%;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.content-log h1,
+.content-sign h1 {
+  font-size: 4rem;
+}
+
+.content-log form,
+.content-sign form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 55%;
+}
+
+.content-log form label,
+.content-sign form label {
+  font-size: 1.4rem;
+}
+
+.content-log form .name-box,
+.content-log form .email-box,
+.content-log form .password-box,
+.content-log form .submit-box,
+.content-sign form .name-box,
+.content-sign form .email-box,
+.content-sign form .password-box,
+.content-sign form .submit-box {
+  width: 100%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 2rem 0;
+}
+
+.content-log form .name-box input,
+.content-log form .email-box input,
+.content-log form .password-box input,
+.content-log form .submit-box input,
+.content-sign form .name-box input,
+.content-sign form .email-box input,
+.content-sign form .password-box input,
+.content-sign form .submit-box input {
+  width: 20rem;
+  height: 3rem;
+}
+
+.content-log form .submit-box button,
+.content-sign form .submit-box button {
+  width: 8rem;
+  height: 2.7rem;
+}
+
+.content-log form .submit-box span,
+.content-sign form .submit-box span {
+  color: #0000ac;
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.content-log form .submit-box span:hover,
+.content-sign form .submit-box span:hover {
+  color: blue;
+}
+
+.hide {
+  display: none;
+}
+
+.showcase {
+  z-index: -99;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.showcase video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.order,
+.submit {
+  border: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.order {
+  color: white;
+  background-color: green;
+  width: 7rem;
+  height: 2.4rem;
+  padding: 0 1rem;
+}
+
+.order:hover {
+  background-color: #005c00;
+}
+
+.submit {
+  color: black;
+  background-color: #24ccff;
+  width: 7rem;
+  height: 2.2rem;
+  padding: 0 1rem;
+}
+
+.submit:hover {
+  background-color: #00ade2;
+}
+
+input {
+  width: 15rem;
+}
+
+select {
+  width: 5rem;
+}
+
+input,
+select {
+  height: 2.3rem;
+  padding: 0 1rem;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 0.2rem;
+}
+
+.box {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.box .boxs {
+  background-color: rgba(0, 0, 0, 0.432);
+  border-radius: 0.3rem;
+  width: 20rem;
+  height: 7rem;
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=global_styles.css.map */

@@ -1,0 +1,36 @@
+.table-content {
+  width: 90%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.2rem;
+  @include flex(column, center, start);
+
+  padding: 2rem;
+  h1 {
+    font-family: $font1;
+    font-size: 4rem;
+    color: white;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    color: white;
+    font-family: $font1;
+    font-weight: 400;
+    thead {
+      background-color: rgb(37, 37, 37);
+    }
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+    td {
+      padding: 1rem;
+    }
+    .theater {
+      width: 12rem;
+    }
+  }
+}
