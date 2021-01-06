@@ -44,7 +44,7 @@
 
     <!-- MOVIES-CONTENT -->
 
-    <div class="table-content">
+    <div class="table-content admin-table">
 
         <h1>MIN-BMS | MOVIES RUNING</h1>
 
@@ -79,7 +79,51 @@
     
         </table>
 
-        <button class="submit">Add New</button>
+        <button type="submit" class="submit admin-add-btn">Add New</button>
+
+    </div>
+
+    <div class="add-container hide">
+
+        <div class="movie-adder">
+
+            <h1>Add NEW MOVIE</h1>
+    
+            <form action="" method="POST">
+    
+                <div class="movie-box">
+    
+                    <label for="movie name">Movie Name :</label>
+                    <input type="text" name="" id="">
+    
+                </div>
+    
+                <div class="rating-box">
+    
+                    <label for="rating">Add Rating :</label>
+                    <input type="text" name="" id="">
+    
+                </div>
+    
+                <div class="info-box">
+    
+                    <label for="info">Add directer & (cast) :</label>
+                    <textarea name="" id=""></textarea>
+    
+                </div>
+    
+                <div class="btn-box">
+    
+                    <button class="back back-btn">Go Back</button>
+                    <button type="submit" class="submit">Add New</button>
+    
+                </div>
+    
+            </form>
+    
+    
+    
+        </div>
 
     </div>
 
@@ -93,6 +137,9 @@
         <p>&copy; 2021 all rights to @MIN-BMS 🎭</p>
 
     </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/dom.js"></script>
 
 </body>
 </html>

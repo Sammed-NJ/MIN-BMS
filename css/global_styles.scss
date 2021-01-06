@@ -22,7 +22,7 @@ $font2: "Yellowtail", cursive;
 @import "navbar";
 @import "movies_table";
 @import "login";
-// @import "";
+@import "admin";
 
 // showcase CSS
 .showcase {
@@ -84,6 +84,23 @@ $font2: "Yellowtail", cursive;
   padding: 0 1rem;
   &:hover {
     background-color: #1a56b6;
+  }
+}
+
+.back {
+  color: rgb(255, 255, 255);
+  background-color: #3273dc00;
+  width: 7rem;
+  height: 2.2rem;
+  padding: 0 1rem;
+  border: 1px solid white;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: $font1;
+  &:hover {
+    background-color: #ffffff36;
   }
 }
 

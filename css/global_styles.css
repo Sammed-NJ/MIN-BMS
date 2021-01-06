@@ -309,6 +309,82 @@ body {
   display: none;
 }
 
+.movie-adder {
+  width: 90%;
+  min-height: 78vh;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.movie-adder h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 4rem;
+  color: white;
+}
+
+.movie-adder form {
+  width: 40%;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.movie-adder form .movie-box,
+.movie-adder form .rating-box,
+.movie-adder form .info-box,
+.movie-adder form .btn-box {
+  font-size: 1.3rem;
+  margin: 1.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.movie-adder form .movie-box input,
+.movie-adder form .rating-box input,
+.movie-adder form .info-box input,
+.movie-adder form .btn-box input {
+  width: 20rem;
+}
+
+.movie-adder form .info-box textarea {
+  border-radius: 0.2rem;
+  width: 20rem;
+  height: 7rem;
+  resize: none;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+}
+
 .showcase {
   z-index: -99;
   position: absolute;
@@ -372,6 +448,24 @@ body {
 
 .submit:hover {
   background-color: #1a56b6;
+}
+
+.back {
+  color: white;
+  background-color: #3273dc00;
+  width: 7rem;
+  height: 2.2rem;
+  padding: 0 1rem;
+  border: 1px solid white;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.back:hover {
+  background-color: #ffffff36;
 }
 
 input {

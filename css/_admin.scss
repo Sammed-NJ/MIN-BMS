@@ -1,0 +1,42 @@
+.movie-adder {
+  width: 90%;
+  min-height: 78vh;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 0.2rem;
+  @include flex(column, center, center);
+
+  padding: 2rem;
+  h1 {
+    font-family: $font1;
+    font-size: 4rem;
+    color: white;
+  }
+  form {
+    width: 40%;
+    color: white;
+    font-family: $font1;
+    .movie-box,
+    .rating-box,
+    .info-box,
+    .btn-box {
+      font-size: 1.3rem;
+      margin: 1.4rem;
+      @include flex(row, space-between, center);
+      input {
+        width: 20rem;
+      }
+    }
+    .info-box {
+      textarea {
+        border-radius: 0.2rem;
+        width: 20rem;
+        height: 7rem;
+        resize: none;
+        padding: 1rem;
+        font-size: 1.2rem;
+        font-family: $font1;
+      }
+    }
+  }
+}
