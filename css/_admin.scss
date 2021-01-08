@@ -40,3 +40,26 @@
     }
   }
 }
+
+// ADMIN-INFO-PAGE
+.admin-content {
+  width: 50%;
+  margin: auto;
+  padding: 10rem;
+  min-height: 78vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 0.3rem;
+  font-family: $font1;
+  color: white;
+  @include flex(column, center, start);
+  h1 {
+    font-size: 4rem;
+  }
+  h3 {
+    font-weight: 500;
+    margin: 1rem 0;
+  }
+  button {
+    margin: 2rem 0;
+  }
+}
