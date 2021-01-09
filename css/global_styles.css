@@ -553,4 +553,18 @@ select {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
+
+.error {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #ec1515;
+  width: 100%;
+  text-align: center;
+}
+
+.error p {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
 /*# sourceMappingURL=global_styles.css.map */

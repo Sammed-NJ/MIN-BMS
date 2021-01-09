@@ -133,3 +133,16 @@ select {
     @include flex(row, space-evenly, center);
   }
 }
+
+.error {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: none;
+  padding: 0.5rem 1rem;
+  color: rgb(236, 21, 21);
+  width: 100%;
+  text-align: center;
+  p {
+    font-weight: 600;
+    font-family: $font1;
+  }
+}
