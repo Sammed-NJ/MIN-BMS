@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
 
     <!-- BG-VIDEO -->
@@ -22,23 +24,19 @@
         <video src="resrc/bg_video.mp4" muted loop autoplay></video>
 
     </section>
-    
+
     <!-- NAVBAR -->
     <div class="navbar">
 
         <div class="container">
 
-            <div class="nav-logo"> <a href="index.html">MIN-BMS 🎭</a> </div>
+            <div class="nav-logo"> <a href="admin_index.php">MIN-BMS 🎭 | ADMIN DASHBORDE</a> </div>
 
             <div class="nav-list">
-                <a href="index.html" class="nav-links">Home</a>
-                <a href="about.html" class="nav-links">About</a>
-                <a href="movies.html" class="nav-links">Movies</a>
-                <a href="my_movies.html" class="nav-links">My Movies</a>
-
-                <!-- TODO -->
-                <!-- change the text in this from 'login' to 'Welcom User Name' after the user logs or sign in -->
-                <a href="login.html" class="nav-links">Login</a> 
+                <a href="admin_index.php" class="nav-links">Home</a>
+                <a href="admin_movies.php" class="nav-links">Movies</a>
+                <a href="admin_booking.php" class="nav-links">Bookings</a>
+                <a href="admin_setting.php" class="nav-links">Admin</a>
 
             </div>
 
@@ -46,11 +44,10 @@
 
     </div>
 
-    <!-- MOVIES-CONTENT -->
+    <!-- BOOKED-MOVIES-CONTENT -->
+    <div class="table-content admin-table">
 
-    <div class="table-content">
-
-        <h1>MIN-BMS | MY MOVIES</h1>
+        <h1>MIN-BMS | MOVIES RUNING</h1>
 
         <table>
 
@@ -59,43 +56,33 @@
                     <th>Number</th>
                     <th>Movie Name</th>
                     <th>Theater</th>
-                    <th>NO.of Seats</th>
+                    <th>No of Seats</th>
                     <th>Date & Time</th>
-                    <th>Book</th>
+                    <th>Print</th>
                 </tr>
             </thead>
-    
-            <tbody>
 
+            <tbody>
                 <tr>
                     <td>1</td>
 
                     <td>Attack On Titan</td>
 
-                    <td>
-                        Icons Films
-                    </td>
+                    <td>Max Cienima</td>
 
-                    <td>
-                        3
-                    </td>
+                    <td>4</td>
 
-                    <td>
-                        23/04/2021 - 09:30am
-                    </td>
+                    <td>20/08/2021 - 9:30pm</td>
 
-                    <td>
-                        <button class="submit">Print</button>
-                    </td>
+                    <td> <button class="submit" type="submit">Print</button> </td>
 
                 </tr>
-
             </tbody>
-    
+
         </table>
 
-    </div>
 
+    </div>
 
     <!-- FOOTER -->
 
@@ -106,4 +93,5 @@
     </div>
 
 </body>
+
 </html>

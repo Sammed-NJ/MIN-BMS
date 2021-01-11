@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
 
     <!-- BG-VIDEO -->
@@ -22,23 +24,23 @@
         <video src="resrc/bg_video.mp4" muted loop autoplay></video>
 
     </section>
-    
+
     <!-- NAVBAR -->
     <div class="navbar">
 
         <div class="container">
 
-            <div class="nav-logo"> <a href="index.html">MIN-BMS 🎭</a> </div>
+            <div class="nav-logo"> <a href="index.php">MIN-BMS 🎭</a> </div>
 
             <div class="nav-list">
-                <a href="index.html" class="nav-links">Home</a>
-                <a href="about.html" class="nav-links">About</a>
-                <a href="movies.html" class="nav-links">Movies</a>
-                <a href="my_movies.html" class="nav-links">My Movies</a>
+                <a href="index.php" class="nav-links">Home</a>
+                <a href="about.php" class="nav-links">About</a>
+                <a href="movies.php" class="nav-links">Movies</a>
+                <a href="my_movies.php" class="nav-links">My Movies</a>
 
                 <!-- TODO -->
                 <!-- change the text in this from 'login' to 'Welcom User Name' after the user logs or sign in -->
-                <a href="login.html" class="nav-links">Login</a> 
+                <a href="login.php" class="nav-links">Login</a>
 
             </div>
 
@@ -67,4 +69,5 @@
     </div>
 
 </body>
+
 </html>
