@@ -65,6 +65,24 @@ $font2: "Yellowtail", cursive;
   }
 }
 
+.order-a {
+  color: white;
+  background-color: #139942;
+  padding: 0.3rem 1.7rem;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: $font1;
+  &:hover {
+    background-color: #128f3d;
+  }
+}
+
+.sider {
+  @include flex(row, space-evenly, center);
+}
+
 .cancel {
   color: white;
   background-color: rgb(255, 53, 53);
@@ -81,7 +99,26 @@ $font2: "Yellowtail", cursive;
   background-color: #3273dc;
   width: 7rem;
   height: 2.2rem;
-  padding: 0 1rem;
+  padding-top: 0 1rem;
+  &:hover {
+    background-color: #1a56b6;
+  }
+}
+
+.admin-btn {
+  color: rgb(255, 255, 255);
+  background-color: #3273dc;
+  width: 10rem;
+  height: 2.2rem;
+  text-align: center;
+  padding-top: 0.3rem;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: $font1;
+  text-decoration: none;
+  margin: 2rem 0;
   &:hover {
     background-color: #1a56b6;
   }
@@ -92,7 +129,28 @@ $font2: "Yellowtail", cursive;
   background-color: #3273dc00;
   width: 7rem;
   height: 2.2rem;
-  padding: 0 1rem;
+  text-align: center;
+  padding-top: 0 1rem;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: $font1;
+  &:hover {
+    background-color: #ffffff36;
+  }
+}
+
+.admin-back {
+  color: rgb(255, 255, 255);
+  background-color: #3273dc00;
+  width: 7rem;
+  height: 2.2rem;
+  text-align: center;
+  padding-top: 0.3rem;
+  text-decoration: none;
   border: 1px solid white;
   border-radius: 0.2rem;
   cursor: pointer;
@@ -105,7 +163,7 @@ $font2: "Yellowtail", cursive;
 }
 
 input {
-  width: 15rem;
+  width: 30rem;
 }
 
 select {
@@ -114,7 +172,7 @@ select {
 
 input,
 select {
-  height: 2.3rem;
+  height: 3rem;
   padding: 0 1rem;
   border: none;
   font-size: 1.2rem;
@@ -135,11 +193,12 @@ select {
 }
 
 .error {
-  background-color: rgba(0, 0, 0, 0.4);
-  border: none;
+  background-color: rgba(255, 25, 25, 0.507);
+  border: 1px solid rgb(255, 25, 25);
+  border-radius: 0.5rem;
   padding: 0.5rem 1rem;
-  color: rgb(236, 21, 21);
-  width: 100%;
+  color: rgb(255, 255, 255);
+  width: 50%;
   text-align: center;
   p {
     font-weight: 600;

@@ -106,7 +106,6 @@ body {
 
 .footer {
   position: absolute;
-  bottom: 0px;
   min-height: 10vh;
   width: 100%;
   display: -webkit-box;
@@ -238,7 +237,7 @@ body {
           align-items: start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 55%;
+  width: 70%;
 }
 
 .content-log form label,
@@ -282,7 +281,7 @@ body {
 .content-sign form .email-box input,
 .content-sign form .password-box input,
 .content-sign form .submit-box input {
-  width: 20rem;
+  width: 30rem;
   height: 3rem;
 }
 
@@ -340,7 +339,7 @@ body {
 }
 
 .movie-adder form {
-  width: 40%;
+  width: 50%;
   color: white;
   font-family: "Poppins", sans-serif;
 }
@@ -372,13 +371,13 @@ body {
 .movie-adder form .rating-box input,
 .movie-adder form .info-box input,
 .movie-adder form .btn-box input {
-  width: 20rem;
+  width: 30rem;
 }
 
 .movie-adder form .info-box textarea {
   border-radius: 0.2rem;
-  width: 20rem;
-  height: 7rem;
+  width: 30rem;
+  height: 10rem;
   resize: none;
   padding: 1rem;
   font-size: 1.2rem;
@@ -465,6 +464,39 @@ body {
   background-color: #128f3d;
 }
 
+.order-a {
+  color: white;
+  background-color: #139942;
+  padding: 0.3rem 1.7rem;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.order-a:hover {
+  background-color: #128f3d;
+}
+
+.sider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 .cancel {
   color: white;
   background-color: #ff3535;
@@ -482,10 +514,30 @@ body {
   background-color: #3273dc;
   width: 7rem;
   height: 2.2rem;
-  padding: 0 1rem;
+  padding-top: 0 1rem;
 }
 
 .submit:hover {
+  background-color: #1a56b6;
+}
+
+.admin-btn {
+  color: white;
+  background-color: #3273dc;
+  width: 10rem;
+  height: 2.2rem;
+  text-align: center;
+  padding-top: 0.3rem;
+  border: none;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  margin: 2rem 0;
+}
+
+.admin-btn:hover {
   background-color: #1a56b6;
 }
 
@@ -494,7 +546,9 @@ body {
   background-color: #3273dc00;
   width: 7rem;
   height: 2.2rem;
-  padding: 0 1rem;
+  text-align: center;
+  padding-top: 0 1rem;
+  text-decoration: none;
   border: 1px solid white;
   border-radius: 0.2rem;
   cursor: pointer;
@@ -507,8 +561,28 @@ body {
   background-color: #ffffff36;
 }
 
+.admin-back {
+  color: white;
+  background-color: #3273dc00;
+  width: 7rem;
+  height: 2.2rem;
+  text-align: center;
+  padding-top: 0.3rem;
+  text-decoration: none;
+  border: 1px solid white;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-back:hover {
+  background-color: #ffffff36;
+}
+
 input {
-  width: 15rem;
+  width: 30rem;
 }
 
 select {
@@ -517,7 +591,7 @@ select {
 
 input,
 select {
-  height: 2.3rem;
+  height: 3rem;
   padding: 0 1rem;
   border: none;
   font-size: 1.2rem;
@@ -555,11 +629,12 @@ select {
 }
 
 .error {
-  background-color: rgba(0, 0, 0, 0.4);
-  border: none;
+  background-color: rgba(255, 25, 25, 0.507);
+  border: 1px solid #ff1919;
+  border-radius: 0.5rem;
   padding: 0.5rem 1rem;
-  color: #ec1515;
-  width: 100%;
+  color: white;
+  width: 50%;
   text-align: center;
 }
 

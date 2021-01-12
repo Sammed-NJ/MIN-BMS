@@ -1,3 +1,12 @@
+<?php
+require "db_connect.php";
+
+$statement = $pdo->prepare('SELECT * FROM movies ORDER BY create_date DESC');
+
+$statement->execute();
+$movies = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,77 +64,49 @@
                 <tr>
                     <th>Number</th>
                     <th>Movie Name</th>
-                    <th>Rating</th>
-                    <th>Directer & (cast)</th>
-                    <th>Book</th>
+                    <th>About Movie</th>
+                    <th>Cost / Head</th>
+                    <th>Time of Added</th>
+                    <th>Action</th>
                 </tr>
             </thead>
 
             <tbody>
-                <tr>
-                    <td>1</td>
 
-                    <td>Attack On Titan</td>
+                <?php foreach ($movies as $i => $movies) : ?>
 
-                    <td> <span>4.5</span> ⭐</td>
+                    <tr>
+                        <td><?php echo $i + 1 ?></td>
 
-                    <td>Directer Name (cast1, cast2, cast3)</td>
+                        <td><?php echo $movies['movie_title'] ?></td>
 
-                    <td>
-                        <button class="cancel">Edit</button>
-                        <button class="order">Remove</button>
-                    </td>
-                </tr>
+                        <td><?php echo $movies['movie_desc'] ?></td>
+
+                        <td><?php echo $movies['cost_per_head'] ?></td>
+
+                        <td><?php echo $movies['create_date'] ?></td>
+
+                        <td class="sider">
+                            <a href="update_movie.php?id=<?php echo $movies['id']; ?>" class="order-a">Edit</a>
+
+                            <form action="delete_movie.php" method="post">
+
+                                <input type="hidden" name="id" value="<?php echo $movies['id']; ?>">
+                                <button type="submit" class="cancel">Delete</button>
+
+                            </form>
+
+                        </td>
+
+                    </tr>
+
+                <?php endforeach; ?>
+
             </tbody>
 
         </table>
 
-        <button type="submit" class="submit admin-add-btn margin">Add New</button>
-
-    </div>
-
-    <!-- ADD-NEW-RUNNING-MOVIES-CONTENT -->
-    <div class="add-container hide">
-
-        <div class="movie-adder">
-
-            <h1>Add NEW MOVIE</h1>
-
-            <form action="" method="">
-
-                <div class="movie-box">
-
-                    <label for="movie name">Movie Name :</label>
-                    <input type="text" name="" id="">
-
-                </div>
-
-                <div class="rating-box">
-
-                    <label for="rating">Add Rating :</label>
-                    <input type="text" name="" id="">
-
-                </div>
-
-                <div class="info-box">
-
-                    <label for="info">Add directer & (cast) :</label>
-                    <textarea name="" id=""></textarea>
-
-                </div>
-
-                <div class="btn-box">
-
-                    <button class="back back-btn">Go Back</button>
-                    <button type="submit" class="submit">Add New</button>
-
-                </div>
-
-            </form>
-
-
-
-        </div>
+        <a href="create_movies.php" type="submit" class="admin-btn">Add New Movie</a>
 
     </div>
 
@@ -135,9 +116,6 @@
         <p>&copy; 2021 all rights to @MIN-BMS 🎭</p>
 
     </div>
-
-    <!-- JAVASCRIPT -->
-    <script src="js/admin_dom.js"></script>
 
 </body>
 

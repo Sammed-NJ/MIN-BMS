@@ -13,7 +13,7 @@
     color: white;
   }
   form {
-    width: 40%;
+    width: 50%;
     color: white;
     font-family: $font1;
     .movie-box,
@@ -24,14 +24,14 @@
       margin: 1.4rem;
       @include flex(row, space-between, center);
       input {
-        width: 20rem;
+        width: 30rem;
       }
     }
     .info-box {
       textarea {
         border-radius: 0.2rem;
-        width: 20rem;
-        height: 7rem;
+        width: 30rem;
+        height: 10rem;
         resize: none;
         padding: 1rem;
         font-size: 1.2rem;

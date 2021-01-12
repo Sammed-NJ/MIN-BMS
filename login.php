@@ -54,11 +54,11 @@
 
         <h1>MIN-BMS | LOGIN</h1>
 
-        <form action="" method="get">
+        <div class="error">
+            <p>Invalid Email ID/Password</p>
+        </div>
 
-            <div class="error hide">
-                <p>Invalid Email ID/Password</p>
-            </div>
+        <form action="" method="get">
 
             <div class="email-box">
 
