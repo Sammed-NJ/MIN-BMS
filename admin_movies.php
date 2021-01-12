@@ -87,6 +87,7 @@ $movies = $statement->fetchAll(PDO::FETCH_ASSOC);
                         <td><?php echo $movies['create_date'] ?></td>
 
                         <td class="sider">
+
                             <a href="update_movie.php?id=<?php echo $movies['id']; ?>" class="order-a">Edit</a>
 
                             <form action="delete_movie.php" method="post">

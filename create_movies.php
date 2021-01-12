@@ -8,6 +8,7 @@ $cost = '';
 $description = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
     $mName = $_POST['mName'];
     $cost = $_POST['cost'];
     $description = $_POST['description'];
@@ -22,25 +23,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if (empty($errors)) {
-        $statement = $pdo->prepare("INSERT INTO 
-        movies 
-        (movie_title, 
-        movie_desc, 
-        cost_per_head,
-        create_date)
 
-        VALUES 
-        (:mName, 
-        :description, 
-        :cost, 
-        :date)");
+        $statement = $pdo->prepare("INSERT INTO movies (movie_title, movie_desc, cost_per_head, create_date) 
+        VALUES (:mName, :description, :cost, :date)");
 
         $statement->bindValue(':mName', $mName);
         $statement->bindValue(':description', $description);
         $statement->bindValue(':cost', $cost);
         $statement->bindValue(':date', $date);
         $statement->execute();
-        header('Location: admin_movies.php');
+        // header('Location: admin_movies.php');
     }
 }
 

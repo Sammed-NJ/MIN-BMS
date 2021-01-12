@@ -9,17 +9,12 @@ if (!$id) {
     exit;
 }
 
-$statement = $pdo->prepare("SELECT * FROM movies WHERE id = :id");
+$statement = $pdo->prepare('SELECT * FROM movies WHERE id = :id');
 $statement->bindValue(':id', $id);
 $statement->execute();
 $movie = $statement->fetch(PDO::FETCH_ASSOC);
 
-// echo '<pre>';
-// var_dump($movie);
-// echo '</pre>';
-
 $errors = [];
-
 $mName = $movie['movie_title'];
 $cost = $movie['cost_per_head'];
 $description = $movie['movie_desc'];
@@ -40,17 +35,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
 
-        $statement = $pdo->prepare("UPDATE movies SET movie_title = :mName, 
-                                    movie_desc = :description, 
-                                    cost_per_head = :cost
-                                    WHERE id = :id");
+        $statement = $pdo->prepare("UPDATE movies SET movie_title = :mName, movie_desc = :description, cost_per_head = :cost
+        WHERE id = :id");
 
         $statement->bindValue(':mName', $mName);
         $statement->bindValue(':description', $description);
         $statement->bindValue(':cost', $cost);
         $statement->bindValue(':id', $id);
         $statement->execute();
-        // header('Location: admin_movies.php');
+        header('Location: admin_movies.php');
     }
 }
 
@@ -106,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div class="movie-adder">
 
-            <h1>Updata | <?php echo $movie['movie_title']; ?></h1>
+            <h1>Add NEW MOVIE</h1>
 
             <?php if (!empty($errors)) : ?>
                 <div class="error">
@@ -116,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             <?php endif ?>
 
-            <form action="create_movies.php" method="post">
+            <form action="" method="post">
 
                 <div class="movie-box">
 
