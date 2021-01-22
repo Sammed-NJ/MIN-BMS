@@ -7,117 +7,65 @@ $statement->execute();
 $movies = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIN-BMS 🎭</title>
+<?php include_once 'includes/admin_header.php'; ?>
 
-    <!-- CSS-STYLES -->
-    <link rel="stylesheet" href="css/global_styles.css">
+<!-- RUNNING-MOVIES-CONTENT -->
+<div class="table-content admin-table">
 
-    <!-- GOOGLE-FONTS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- ALL TEXT FACE 'Poppins' -- SPECIAL TEXT FACE 'Yellowtail' -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+    <h1>MIN-BMS | MOVIES RUNING</h1>
 
-</head>
+    <table>
 
-<body>
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Movie Name</th>
+                <th>About Movie</th>
+                <th>Cost / Head</th>
+                <th>Time of Added</th>
+                <th>Action</th>
+            </tr>
+        </thead>
 
-    <!-- BG-VIDEO -->
-    <section class="showcase">
+        <tbody>
 
-        <video src="resrc/bg_video.mp4" muted loop autoplay></video>
+            <?php foreach ($movies as $i => $movies) : ?>
 
-    </section>
-
-    <!-- NAVBAR -->
-    <div class="navbar">
-
-        <div class="container">
-
-            <div class="nav-logo"> <a href="admin_index.php">MIN-BMS 🎭 | ADMIN DASHBORDE</a> </div>
-
-            <div class="nav-list">
-                <a href="admin_index.php" class="nav-links">Home</a>
-                <a href="admin_movies.php" class="nav-links">Movies</a>
-                <a href="admin_booking.php" class="nav-links">Bookings</a>
-                <a href="admin_setting.php" class="nav-links">Admin</a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- RUNNING-MOVIES-CONTENT -->
-    <div class="table-content admin-table">
-
-        <h1>MIN-BMS | MOVIES RUNING</h1>
-
-        <table>
-
-            <thead>
                 <tr>
-                    <th>Number</th>
-                    <th>Movie Name</th>
-                    <th>About Movie</th>
-                    <th>Cost / Head</th>
-                    <th>Time of Added</th>
-                    <th>Action</th>
+                    <td><?php echo $i + 1 ?></td>
+
+                    <td><?php echo $movies['movie_title'] ?></td>
+
+                    <td><?php echo $movies['movie_desc'] ?></td>
+
+                    <td><?php echo $movies['cost_per_head'] ?></td>
+
+                    <td><?php echo $movies['create_date'] ?></td>
+
+                    <td class="sider">
+
+                        <a href="update_movie.php?id=<?php echo $movies['id']; ?>" class="order-a">Edit</a>
+
+                        <form action="delete_movie.php" method="post">
+
+                            <input type="hidden" name="id" value="<?php echo $movies['id']; ?>">
+                            <button type="submit" class="cancel">Delete</button>
+
+                        </form>
+
+                    </td>
+
                 </tr>
-            </thead>
 
-            <tbody>
+            <?php endforeach; ?>
 
-                <?php foreach ($movies as $i => $movies) : ?>
+        </tbody>
 
-                    <tr>
-                        <td><?php echo $i + 1 ?></td>
+    </table>
 
-                        <td><?php echo $movies['movie_title'] ?></td>
+    <a href="create_movies.php" type="submit" class="admin-btn">Add New Movie</a>
 
-                        <td><?php echo $movies['movie_desc'] ?></td>
+</div>
 
-                        <td><?php echo $movies['cost_per_head'] ?></td>
-
-                        <td><?php echo $movies['create_date'] ?></td>
-
-                        <td class="sider">
-
-                            <a href="update_movie.php?id=<?php echo $movies['id']; ?>" class="order-a">Edit</a>
-
-                            <form action="delete_movie.php" method="post">
-
-                                <input type="hidden" name="id" value="<?php echo $movies['id']; ?>">
-                                <button type="submit" class="cancel">Delete</button>
-
-                            </form>
-
-                        </td>
-
-                    </tr>
-
-                <?php endforeach; ?>
-
-            </tbody>
-
-        </table>
-
-        <a href="create_movies.php" type="submit" class="admin-btn">Add New Movie</a>
-
-    </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-
-        <p>&copy; 2021 all rights to @MIN-BMS 🎭</p>
-
-    </div>
-
-</body>
-
-</html>
+<?php include_once 'includes/admin_footer.php'; ?>

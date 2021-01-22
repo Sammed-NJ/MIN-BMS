@@ -1,94 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require "db_connect.php";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIN-BMS 🎭</title>
+$statement = $pdo->prepare('SELECT * FROM movies');
+$statement2 = $pdo->prepare('SELECT * FROM users');
 
-    <!-- CSS-STYLES -->
-    <link rel="stylesheet" href="css/global_styles.css">
+$statement->execute();
+$movies = $statement->fetchAll(PDO::FETCH_ASSOC);
+$statement2->execute();
+$users = $statement2->fetchAll(PDO::FETCH_ASSOC);
 
-    <!-- GOOGLE-FONTS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- ALL TEXT FACE 'Poppins' -- SPECIAL TEXT FACE 'Yellowtail' -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+$totalMovies = sizeof($movies);
 
-</head>
+$totalUsers = sizeof($users);
 
-<body>
+?>
 
-    <!-- BG-VIDEO -->
-    <section class="showcase">
 
-        <video src="resrc/bg_video.mp4" muted loop autoplay></video>
+<?php include_once 'includes/admin_header.php'; ?>
 
-    </section>
+<!-- MOVIES-CONTENT -->
 
-    <!-- NAVBAR -->
-    <div class="navbar">
+<div class="content">
 
-        <div class="container">
+    <h1>
+        MIN-BMS | ADMIN
+    </h1>
 
-            <div class="nav-logo"> <a href="admin_index.php">MIN-BMS 🎭 | ADMIN DASHBORDE</a> </div>
+    <div class="box">
 
-            <div class="nav-list">
-                <a href="admin_index.php" class="nav-links">Home</a>
-                <a href="admin_movies.php" class="nav-links">Movies</a>
-                <a href="admin_booking.php" class="nav-links">Bookings</a>
-                <a href="admin_setting.php" class="nav-links">Admin</a>
+        <div class="boxs">
 
-            </div>
+            <h2><?php echo $totalUsers; ?></h2>
+            <h2>ACTIVE USERS</h2>
+
+        </div>
+
+        <div class="boxs">
+
+            <h2><?php echo $totalMovies; ?></h2>
+            <h2>MOVIES RUNNING</h2>
+
+        </div>
+
+        <div class="boxs">
+
+            <h2>4</h2>
+            <h2>TOTAL BOOKINGS</h2>
 
         </div>
 
     </div>
 
-    <!-- MOVIES-CONTENT -->
+</div>
 
-    <div class="content">
-
-        <h1>
-            MIN-BMS | ADMIN
-        </h1>
-
-        <div class="box">
-
-            <div class="boxs">
-
-                <h2>3</h2>
-                <h2>ACTIVE USERS</h2>
-
-            </div>
-
-            <div class="boxs">
-
-                <h2>5</h2>
-                <h2>MOVIES RUNNING</h2>
-
-            </div>
-
-            <div class="boxs">
-
-                <h2>4</h2>
-                <h2>TOTAL BOOKINGS</h2>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- FOOTER -->
-
-    <div class="footer">
-
-        <p>&copy; 2021 all rights to @MIN-BMS 🎭</p>
-
-    </div>
-
-</body>
-
-</html>
+<?php include_once 'includes/admin_footer.php'; ?>

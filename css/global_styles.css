@@ -509,6 +509,21 @@ body {
   background-color: #e63131;
 }
 
+.cancel-a {
+  color: white;
+  background-color: #ff3535;
+  padding: 0.3rem 1.7rem;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.cancel-a:hover {
+  background-color: #e63131;
+}
+
 .submit {
   color: white;
   background-color: #3273dc;
@@ -518,6 +533,25 @@ body {
 }
 
 .submit:hover {
+  background-color: #1a56b6;
+}
+
+.submit-a {
+  color: white;
+  background-color: #3273dc;
+  width: 7rem;
+  height: 2.2rem;
+  border: none;
+  border-radius: 0.2rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  padding: 0.4rem 0;
+  text-align: center;
+}
+
+.submit-a:hover {
   background-color: #1a56b6;
 }
 

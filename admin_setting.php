@@ -1,75 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require "db_connect.php";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIN-BMS 🎭</title>
+$statement = $pdo->prepare('SELECT * FROM admin ORDER BY adminId DESC');
 
-    <!-- CSS-STYLES -->
-    <link rel="stylesheet" href="css/global_styles.css">
+$statement->execute();
+$admin = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    <!-- GOOGLE-FONTS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- ALL TEXT FACE 'Poppins' -- SPECIAL TEXT FACE 'Yellowtail' -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
 
-</head>
+include_once 'includes/admin_header.php';
 
-<body>
+?>
 
-    <!-- BG-VIDEO -->
-    <section class="showcase">
+<!-- ADMIN-CONTENT -->
 
-        <video src="resrc/bg_video.mp4" muted loop autoplay></video>
+<div class="admin-content">
 
-    </section>
+    <h1>MIN-BMS | ADMIN</h1>
 
-    <!-- NAVBAR -->
-    <div class="navbar">
+    <?php foreach ($admin as $i => $admin) : ?>
+        <h3>Admin Name : <?php echo $admin['admin_name']; ?></h3>
+        <h3>Admin ID : <a href="#"><?php echo $admin['user_id']; ?></a> </h3>
 
-        <div class="container">
-
-            <div class="nav-logo"> <a href="admin_index.php">MIN-BMS 🎭 | ADMIN DASHBORDE</a> </div>
-
-            <div class="nav-list">
-                <a href="admin_index.php" class="nav-links">Home</a>
-                <a href="admin_movies.php" class="nav-links">Movies</a>
-                <a href="admin_booking.php" class="nav-links">Bookings</a>
-                <a href="admin_setting.php" class="nav-links">Admin</a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- ADMIN-CONTENT -->
-
-    <div class="admin-content">
-
-        <h1>MIN-BMS | ADMIN</h1>
-
-        <h3>Admin Nmae : Sammed NJ</h3>
 
         <p>This website is build and designed by the
             admin and can only person to control the website. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem id quae, voluptate architecto obcaecati esse nesciunt! Voluptates rerum et, ducimus, veniam architecto itaque ipsam unde molestias, sit cum vero nobis.</p>
 
-        <button class="cancel">Log out</button>
+    <?php endforeach; ?>
+
+    <button class="cancel">Log out</button>
 
 
 
-    </div>
+</div>
 
-
-    <!-- FOOTER -->
-
-    <div class="footer">
-
-        <p>&copy; 2021 all rights to @MIN-BMS 🎭</p>
-
-    </div>
-
-</body>
-
-</html>
+<?php include_once 'includes/admin_footer.php'; ?>

@@ -9,7 +9,7 @@ if (!$id) {
     exit;
 }
 
-$statment = $pdo->prepare('DELETE FROM movies WHERE id = :id');
+$statment = $pdo->prepare('DELETE FROM users WHERE id = :id');
 $statment->bindValue(':id', $id);
 $statment->execute();
 
