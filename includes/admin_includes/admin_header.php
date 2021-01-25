@@ -7,7 +7,9 @@
     <title>MIN-BMS 🎭</title>
 
     <!-- CSS-STYLES -->
-    <link rel="stylesheet" href="css/global_styles.css">
+    <?php $cssPath = $_SERVER['DOCUMENT_ROOT'];
+    $cssPath = "/collage projects/min-mbs/css/global_styles.css"; ?>
+    <link rel="stylesheet" href="<?php echo $cssPath; ?>">
 
     <!-- GOOGLE-FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -21,7 +23,10 @@
     <!-- BG-VIDEO -->
     <section class="showcase">
 
-        <video src="resrc/bg_video.mp4" muted loop autoplay></video>
+        <?php $resrcPath = $_SERVER['DOCUMENT_ROOT'];
+        $resrcPath = "/collage projects/min-mbs/resrc/bg_video.mp4"; ?>
+
+        <video src="<?php echo $resrcPath; ?>" muted loop autoplay></video>
 
     </section>
 

@@ -1,112 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include_once 'includes/index_includes/main_hearder.php' ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIN-BMS 🎭</title>
+<!-- MOVIES-CONTENT -->
 
-    <!-- CSS-STYLES -->
-    <link rel="stylesheet" href="css/global_styles.css">
+<div class="table-content">
 
-    <!-- GOOGLE-FONTS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- ALL TEXT FACE 'Poppins' -- SPECIAL TEXT FACE 'Yellowtail' -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
+    <h1>MIN-BMS | MY MOVIES</h1>
 
-</head>
+    <table>
 
-<body>
+        <thead>
+            <tr>
+                <th>Number</th>
+                <th>Movie Name</th>
+                <th>Theater</th>
+                <th>NO.of Seats</th>
+                <th>Date & Time</th>
+                <th>Book</th>
+            </tr>
+        </thead>
 
-    <!-- BG-VIDEO -->
-    <section class="showcase">
+        <tbody>
 
-        <video src="resrc/bg_video.mp4" muted loop autoplay></video>
+            <tr>
+                <td>1</td>
 
-    </section>
+                <td>Attack On Titan</td>
 
-    <!-- NAVBAR -->
-    <div class="navbar">
+                <td>
+                    Icons Films
+                </td>
 
-        <div class="container">
+                <td>
+                    3
+                </td>
 
-            <div class="nav-logo"> <a href="index.php">MIN-BMS 🎭</a> </div>
+                <td>
+                    23/04/2021 - 09:30am
+                </td>
 
-            <div class="nav-list">
-                <a href="index.php" class="nav-links">Home</a>
-                <a href="about.php" class="nav-links">About</a>
-                <a href="movies.php" class="nav-links">Movies</a>
-                <a href="my_movies.php" class="nav-links">My Movies</a>
+                <td>
+                    <button class="submit">Print</button>
+                </td>
 
-                <!-- TODO -->
-                <!-- change the text in this from 'login' to 'Welcom User Name' after the user logs or sign in -->
-                <a href="login.php" class="nav-links">Login</a>
+            </tr>
 
-            </div>
+        </tbody>
 
-        </div>
+    </table>
 
-    </div>
+</div>
 
-    <!-- MOVIES-CONTENT -->
-
-    <div class="table-content">
-
-        <h1>MIN-BMS | MY MOVIES</h1>
-
-        <table>
-
-            <thead>
-                <tr>
-                    <th>Number</th>
-                    <th>Movie Name</th>
-                    <th>Theater</th>
-                    <th>NO.of Seats</th>
-                    <th>Date & Time</th>
-                    <th>Book</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <td>1</td>
-
-                    <td>Attack On Titan</td>
-
-                    <td>
-                        Icons Films
-                    </td>
-
-                    <td>
-                        3
-                    </td>
-
-                    <td>
-                        23/04/2021 - 09:30am
-                    </td>
-
-                    <td>
-                        <button class="submit">Print</button>
-                    </td>
-
-                </tr>
-
-            </tbody>
-
-        </table>
-
-    </div>
-
-
-    <!-- FOOTER -->
-
-    <div class="footer">
-
-        <p>&copy; 2021 all rights to @MIN-BMS 🎭</p>
-
-    </div>
-
-</body>
-
-</html>
+<?php include_once 'includes/index_includes/mian_footer.php' ?>

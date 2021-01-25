@@ -1,4 +1,8 @@
-<?php include_once 'includes/admin_header.php'; ?>
+<?php
+$Hpath = $_SERVER['DOCUMENT_ROOT'];
+$Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_header.php";
+include_once($Hpath);
+?>
 
 <!-- BOOKED-MOVIES-CONTENT -->
 <div class="table-content admin-table">
@@ -40,4 +44,8 @@
 
 </div>
 
-<?php include_once 'includes/admin_footer.php'; ?>
+<?php
+$Hpath = $_SERVER['DOCUMENT_ROOT'];
+$Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_footer.php";
+include_once($Hpath);
+?>

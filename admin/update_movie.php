@@ -1,18 +1,31 @@
 <?php
 
-require "db_connect.php";
+$CONpath = $_SERVER['DOCUMENT_ROOT'];
+$CONpath .= "/collage projects/min-mbs/db_connect.php";
+require($CONpath);
+
+$id = $_GET['id'] ?? null;
+
+if (!$id) {
+    header('Location: admin_movies.php');
+    exit;
+}
+
+$statement = $pdo->prepare('SELECT * FROM movies WHERE id = :id');
+$statement->bindValue(':id', $id);
+$statement->execute();
+$movie = $statement->fetch(PDO::FETCH_ASSOC);
 
 $errors = [];
-$mName = '';
-$cost = '';
-$description = '';
+$mName = $movie['movie_title'];
+$cost = $movie['cost_per_head'];
+$description = $movie['movie_desc'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $mName = $_POST['mName'];
     $cost = $_POST['cost'];
     $description = $_POST['description'];
-    $date = date('y-m-d H:i:s');
 
     if (!$mName) {
         $errors[] = 'Movie Name is Required';
@@ -24,13 +37,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (empty($errors)) {
 
-        $statement = $pdo->prepare("INSERT INTO movies (movie_title, movie_desc, cost_per_head, create_date) 
-        VALUES (:mName, :description, :cost, :date)");
+        $statement = $pdo->prepare("UPDATE movies SET movie_title = :mName, movie_desc = :description, cost_per_head = :cost
+        WHERE id = :id");
 
         $statement->bindValue(':mName', $mName);
         $statement->bindValue(':description', $description);
         $statement->bindValue(':cost', $cost);
-        $statement->bindValue(':date', $date);
+        $statement->bindValue(':id', $id);
         $statement->execute();
         header('Location: admin_movies.php');
     }
@@ -38,7 +51,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ?>
 
-<?php include_once 'includes/admin_header.php'; ?>
+<?php
+$Hpath = $_SERVER['DOCUMENT_ROOT'];
+$Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_header.php";
+include_once($Hpath);
+?>
 
 <!-- ADD-NEW-RUNNING-MOVIES-CONTENT -->
 <div class="add-container">
@@ -55,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         <?php endif ?>
 
-        <form action="create_movies.php" method="post">
+        <form action="" method="post">
 
             <div class="movie-box">
 
@@ -81,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="btn-box">
 
                 <a href="admin_movies.php" class="admin-back">Go Back</a>
-                <button type="submit" class="submit">Add New</button>
+                <button type="submit" class="submit">Update</button>
 
             </div>
 
@@ -93,4 +110,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 </div>
 
-<?php include_once 'includes/admin_footer.php'; ?>
+<!-- FOOTER -->
+<div class="footer">
+
+    <p>&copy; 2021 all rights to @MIN-BMS 🎭</p>
+
+</div>
+
+</body>
+
+</html>

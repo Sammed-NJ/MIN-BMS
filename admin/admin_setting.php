@@ -1,5 +1,7 @@
 <?php
-require "db_connect.php";
+$CONpath = $_SERVER['DOCUMENT_ROOT'];
+$CONpath .= "/collage projects/min-mbs/db_connect.php";
+require($CONpath);
 
 $statement = $pdo->prepare('SELECT * FROM admin ORDER BY adminId DESC');
 
@@ -7,8 +9,12 @@ $statement->execute();
 $admin = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 
-include_once 'includes/admin_header.php';
+?>
 
+<?php
+$Hpath = $_SERVER['DOCUMENT_ROOT'];
+$Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_header.php";
+include_once($Hpath);
 ?>
 
 <!-- ADMIN-CONTENT -->
@@ -33,4 +39,8 @@ include_once 'includes/admin_header.php';
 
 </div>
 
-<?php include_once 'includes/admin_footer.php'; ?>
+<?php
+$Hpath = $_SERVER['DOCUMENT_ROOT'];
+$Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_footer.php";
+include_once($Hpath);
+?>

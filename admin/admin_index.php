@@ -1,5 +1,8 @@
 <?php
-require "db_connect.php";
+
+$CONpath = $_SERVER['DOCUMENT_ROOT'];
+$CONpath .= "/collage projects/min-mbs/db_connect.php";
+require($CONpath);
 
 $statement = $pdo->prepare('SELECT * FROM movies');
 $statement2 = $pdo->prepare('SELECT * FROM users');
@@ -16,7 +19,11 @@ $totalUsers = sizeof($users);
 ?>
 
 
-<?php include_once 'includes/admin_header.php'; ?>
+<?php
+$Hpath = $_SERVER['DOCUMENT_ROOT'];
+$Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_header.php";
+include_once($Hpath);
+?>
 
 <!-- MOVIES-CONTENT -->
 
@@ -53,4 +60,8 @@ $totalUsers = sizeof($users);
 
 </div>
 
-<?php include_once 'includes/admin_footer.php'; ?>
+<?php
+$Hpath = $_SERVER['DOCUMENT_ROOT'];
+$Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_footer.php";
+include_once($Hpath);
+?>

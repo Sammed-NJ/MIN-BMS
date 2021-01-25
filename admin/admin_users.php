@@ -1,5 +1,7 @@
 <?php
-require "db_connect.php";
+$CONpath = $_SERVER['DOCUMENT_ROOT'];
+$CONpath .= "/collage projects/min-mbs/db_connect.php";
+require($CONpath);
 
 $statement = $pdo->prepare('SELECT * FROM users ORDER BY time_stamp');
 
@@ -9,7 +11,11 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
-<?php include_once 'includes/admin_header.php'; ?>
+<?php
+$Hpath = $_SERVER['DOCUMENT_ROOT'];
+$Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_header.php";
+include_once($Hpath);
+?>
 
 <!-- BOOKED-MOVIES-CONTENT -->
 <div class="table-content admin-table">
@@ -58,4 +64,8 @@ $users = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 </div>
 
-<?php include_once 'includes/admin_footer.php'; ?>
+<?php
+$Hpath = $_SERVER['DOCUMENT_ROOT'];
+$Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_footer.php";
+include_once($Hpath);
+?>

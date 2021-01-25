@@ -1,6 +1,8 @@
 <?php
 
-require "db_connect.php";
+$CONpath = $_SERVER['DOCUMENT_ROOT'];
+$CONpath .= "/collage projects/min-mbs/db_connect.php";
+require($CONpath);
 
 $id = $_POST['id'] ?? null;
 
