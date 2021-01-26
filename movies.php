@@ -1,4 +1,10 @@
-<?php include_once 'includes/index_includes/main_hearder.php' ?>
+<?php
+
+require 'db_connect.php';
+
+include_once 'includes/index_includes/main_hearder.php'
+
+?>
 
 <!-- MOVIES-CONTENT -->
 
@@ -23,10 +29,13 @@
 
         <tbody>
             <tr>
-                <td>1</td>
-                <td>Attack On Titan</td>
-                <td> <span>4.5</span> ⭐</td>
-                <td>Directer Name (cast1, cast2, cast3)</td>
+
+
+                <td></td>
+                <td></td>
+                <td>⭐</td>
+                <td></td>
+
                 <td>
                     <select class="theater" name="seats" id="">
                         <option disabled>select theater</option>
@@ -35,6 +44,7 @@
                         <option value="">Globe Cenima</option>
                     </select>
                 </td>
+
                 <td>
                     <select name="seats" id="">
                         <option disabled>select seats</option>
@@ -56,6 +66,7 @@
                 <td>
                     <button class="order">Book Now</button>
                 </td>
+
             </tr>
         </tbody>
 

@@ -4,22 +4,6 @@ $CONpath = $_SERVER['DOCUMENT_ROOT'];
 $CONpath .= "/collage projects/min-mbs/db_connect.php";
 require($CONpath);
 
-$statement = $pdo->prepare('SELECT * FROM movies');
-$statement2 = $pdo->prepare('SELECT * FROM users');
-
-$statement->execute();
-$movies = $statement->fetchAll(PDO::FETCH_ASSOC);
-$statement2->execute();
-$users = $statement2->fetchAll(PDO::FETCH_ASSOC);
-
-$totalMovies = sizeof($movies);
-
-$totalUsers = sizeof($users);
-
-?>
-
-
-<?php
 $Hpath = $_SERVER['DOCUMENT_ROOT'];
 $Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_header.php";
 include_once($Hpath);
@@ -37,14 +21,14 @@ include_once($Hpath);
 
         <div class="boxs">
 
-            <h2><?php echo $totalUsers; ?></h2>
+            <h2></h2>
             <h2>ACTIVE USERS</h2>
 
         </div>
 
         <div class="boxs">
 
-            <h2><?php echo $totalMovies; ?></h2>
+            <h2></h2>
             <h2>MOVIES RUNNING</h2>
 
         </div>

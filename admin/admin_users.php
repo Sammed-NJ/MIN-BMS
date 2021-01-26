@@ -3,18 +3,10 @@ $CONpath = $_SERVER['DOCUMENT_ROOT'];
 $CONpath .= "/collage projects/min-mbs/db_connect.php";
 require($CONpath);
 
-$statement = $pdo->prepare('SELECT * FROM users ORDER BY time_stamp');
-
-$statement->execute();
-$users = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-?>
-
-
-<?php
 $Hpath = $_SERVER['DOCUMENT_ROOT'];
 $Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_header.php";
 include_once($Hpath);
+
 ?>
 
 <!-- BOOKED-MOVIES-CONTENT -->
@@ -34,29 +26,21 @@ include_once($Hpath);
         </thead>
 
         <tbody>
-            <?php foreach ($users as $i => $users) : ?>
 
-                <tr>
-                    <td><?php echo $i + 1 ?></td>
+            <tr>
+                <td></td>
 
-                    <td><?php echo $users['email_Id'] ?></td>
+                <td></td>
 
-                    <td><?php echo $users['time_stamp'] ?></td>
+                <td></td>
 
-                    <td>
+                <td>
+                    <button class="cancel" type="submit" name="remove_user">Remove</button>
 
-                        <form action="delete_user.php" method="post">
+                </td>
 
-                            <input type="hidden" name="userId" value="<?php echo $users['userId']; ?>">
-                            <button class="cancel" type="submit" name="remove_user">Remove</button>
+            </tr>
 
-                        </form>
-
-                    </td>
-
-                </tr>
-
-            <?php endforeach; ?>
         </tbody>
 
     </table>

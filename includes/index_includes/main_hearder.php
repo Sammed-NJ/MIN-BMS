@@ -90,14 +90,6 @@ $yeslogged = '<a href="' . $PathLO . '" class="nav-links">Logout</a>';
                 }
 
                 ?>
-                <!-- 
-                <a href="<?php
-                            // echo $PathLO;
-                            ?>" 
-                 class="nav-links">Login/Signin</a> -->
-
-                <!-- <a href="<?php //echo $PathLOu; 
-                                ?>" class="nav-links">Logout</a> -->
 
             </div>
 

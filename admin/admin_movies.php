@@ -3,17 +3,10 @@ $CONpath = $_SERVER['DOCUMENT_ROOT'];
 $CONpath .= "/collage projects/min-mbs/db_connect.php";
 require($CONpath);
 
-$statement = $pdo->prepare('SELECT * FROM movies ORDER BY create_date DESC');
-
-$statement->execute();
-$movies = $statement->fetchAll(PDO::FETCH_ASSOC);
-
-?>
-
-<?php
 $Hpath = $_SERVER['DOCUMENT_ROOT'];
 $Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_header.php";
 include_once($Hpath);
+
 ?>
 
 <!-- RUNNING-MOVIES-CONTENT -->
@@ -36,35 +29,28 @@ include_once($Hpath);
 
         <tbody>
 
-            <?php foreach ($movies as $i => $movies) : ?>
 
-                <tr>
-                    <td><?php echo $i + 1 ?></td>
+            <tr>
+                <td></td>
 
-                    <td><?php echo $movies['movie_title'] ?></td>
+                <td></td>
 
-                    <td><?php echo $movies['movie_desc'] ?></td>
+                <td></td>
 
-                    <td><?php echo $movies['cost_per_head'] ?></td>
+                <td></td>
 
-                    <td><?php echo $movies['create_date'] ?></td>
+                <td></td>
 
-                    <td class="sider">
+                <td class="sider">
 
-                        <a href="update_movie.php?id=<?php echo $movies['id']; ?>" class="order-a">Edit</a>
+                    <a href="update_movie.php?id=<?php echo $movies['id']; ?>" class="order-a">Edit</a>
 
-                        <form action="delete_movie.php" method="post">
+                    <button type="submit" class="cancel">Delete</button>
 
-                            <input type="hidden" name="id" value="<?php echo $movies['id']; ?>">
-                            <button type="submit" class="cancel">Delete</button>
+                </td>
 
-                        </form>
+            </tr>
 
-                    </td>
-
-                </tr>
-
-            <?php endforeach; ?>
 
         </tbody>
 

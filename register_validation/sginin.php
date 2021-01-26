@@ -4,47 +4,6 @@ $CONpath = $_SERVER['DOCUMENT_ROOT'];
 $CONpath .= "/collage projects/min-mbs/db_connect.php";
 require($CONpath);
 
-// echo '<pre>';
-// var_dump();
-// echo '</pre>';
-// exit;
-
-$signinErrors = [];
-$userID = '';
-$password = '';
-$Cpassword = '';
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    $userID = $_POST['userId'];
-    $password = $_POST['password'];
-    $Cpassword = $_POST['confirmPassword'];
-
-    if (!$userID) {
-        $signinErrors[] = 'Email ID is Requaierd';
-    }
-
-    if (!$password) {
-        $signinErrors[] = 'Password is Requaierd';
-    }
-
-    if (empty($signinErrors) & $password === $Cpassword) {
-
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-
-        $statement = $pdo->prepare("INSERT INTO users (email_Id, password, time_stamp) 
-        VALUES (:userID, :password, current_timestamp())");
-
-        $statement->bindValue(':userID', $userID);
-        $statement->bindValue(':password', $hashedPassword);
-        $statement->execute();
-
-        // TODO ADD LOCTAION TO INDEX.PHP AFTER EXECUTION
-        header('Location: login.php');
-    }
-}
-
-
 ?>
 
 <?php
@@ -52,18 +11,12 @@ $Hpath = $_SERVER['DOCUMENT_ROOT'];
 $Hpath .= "/collage projects/min-mbs/includes/index_includes/main_hearder.php";
 include_once($Hpath);
 ?>
+<div class="alert">
 
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    echo
-    '<div class="alert">
-    
     <p> <span>SUCCES!</span> Your account has been created now login to continue booking movies</p>
-    
-    </div>
-    ';
-} ?>
+
+</div>
+
 
 <!-- SIGNIN-CONTENT -->
 
@@ -71,24 +24,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <h1>MIN-BMS | SINGIN</h1>
 
-    <?php if (!empty($signinErrors)) : ?>
-
-        <div class="error">
-
-            <?php foreach ($signinErrors as $signinErrors) : ?>
-                <p><?php echo $signinErrors ?></p>
-            <?php endforeach; ?>
-
-        </div>
-
-    <?php endif; ?>
 
     <form action="sginin.php" method="post">
 
         <div class="email-box">
 
             <label for="email">Eamil :</label>
-            <input type="email" name="userId" value="<?php echo $userID; ?>">
+            <input type="email" name="userId" value="">
 
         </div>
 

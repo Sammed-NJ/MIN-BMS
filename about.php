@@ -1,4 +1,6 @@
-<?php include_once 'includes/index_includes/main_hearder.php' ?>
+<?php
+
+include_once 'includes/index_includes/main_hearder.php' ?>
 
 <!-- HOME-CONTENT -->
 
