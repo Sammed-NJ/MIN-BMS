@@ -676,4 +676,22 @@ select {
   font-weight: 600;
   font-family: "Poppins", sans-serif;
 }
+
+.alert {
+  width: 100%;
+  padding: 0.7rem 0.2rem;
+  background-color: rgba(11, 168, 11, 0.3);
+  border: 1px solid #0ba80b;
+  font-family: "Poppins", sans-serif;
+}
+
+.alert p {
+  font-weight: 400;
+  color: white;
+}
+
+.alert p span {
+  font-weight: 600;
+  color: #0ba80b;
+}
 /*# sourceMappingURL=global_styles.css.map */

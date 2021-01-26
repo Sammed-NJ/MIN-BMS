@@ -1,3 +1,34 @@
+<?php
+
+require 'db_connect.php';
+
+$PathIN = $_SERVER['DOCUMENT_ROOT'];
+$PathIN = "/collage projects/min-mbs/index.php";
+
+$PathAB = $_SERVER['DOCUMENT_ROOT'];
+$PathAB = "/collage projects/min-mbs/about.php";
+
+$PathMO = $_SERVER['DOCUMENT_ROOT'];
+$PathMO = "/collage projects/min-mbs/movies.php";
+
+$PathMY = $_SERVER['DOCUMENT_ROOT'];
+$PathMY = "/collage projects/min-mbs/my_movies.php";
+
+$PathLO = $_SERVER['DOCUMENT_ROOT'];
+$PathLO = "/collage projects/min-mbs/register_validation/login.php";
+
+$PathLOu = $_SERVER['DOCUMENT_ROOT'];
+$PathLOu = "/collage projects/min-mbs/register_validation/logout.php";
+
+$nologged = '<a href="' . $PathLO . '" class="nav-links">Login/Signin</a>';
+
+$yeslogged = '<a href="' . $PathLO . '" class="nav-links">Logout</a>';
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,24 +66,6 @@
 
         <div class="container">
 
-            <?php
-            $PathIN = $_SERVER['DOCUMENT_ROOT'];
-            $PathIN = "/collage projects/min-mbs/index.php";
-
-            $PathAB = $_SERVER['DOCUMENT_ROOT'];
-            $PathAB = "/collage projects/min-mbs/about.php";
-
-            $PathMO = $_SERVER['DOCUMENT_ROOT'];
-            $PathMO = "/collage projects/min-mbs/movies.php";
-
-            $PathMY = $_SERVER['DOCUMENT_ROOT'];
-            $PathMY = "/collage projects/min-mbs/my_movies.php";
-
-            $PathLO = $_SERVER['DOCUMENT_ROOT'];
-            $PathLO = "/collage projects/min-mbs/register_validation/login.php";
-
-            ?>
-
             <div class="nav-logo"> <a href="<?php echo $PathIN; ?>">MIN-BMS 🎭</a> </div>
 
             <div class="nav-list">
@@ -67,7 +80,24 @@
 
                 <!-- TODO -->
                 <!-- change the text in this from 'login' to 'Welcom User Name' after the user logs or sign in -->
-                <a href="<?php echo $PathLO; ?>" class="nav-links">Login</a>
+
+                <?php
+
+                if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+                    echo $nologged;;
+                } else {
+                    echo $yeslogged;
+                }
+
+                ?>
+                <!-- 
+                <a href="<?php
+                            // echo $PathLO;
+                            ?>" 
+                 class="nav-links">Login/Signin</a> -->
+
+                <!-- <a href="<?php //echo $PathLOu; 
+                                ?>" class="nav-links">Logout</a> -->
 
             </div>
 

@@ -12,11 +12,13 @@ require($CONpath);
 $signinErrors = [];
 $userID = '';
 $password = '';
+$Cpassword = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $userID = $_POST['userId'];
     $password = $_POST['password'];
+    $Cpassword = $_POST['confirmPassword'];
 
     if (!$userID) {
         $signinErrors[] = 'Email ID is Requaierd';
@@ -26,19 +28,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $signinErrors[] = 'Password is Requaierd';
     }
 
-    if (empty($signinErrors)) {
+    if (empty($signinErrors) & $password === $Cpassword) {
 
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-        $statement = $pdo->prepare("INSERT INTO users (email_Id, password) 
-        VALUES (:userID, :password)");
+        $statement = $pdo->prepare("INSERT INTO users (email_Id, password, time_stamp) 
+        VALUES (:userID, :password, current_timestamp())");
 
         $statement->bindValue(':userID', $userID);
         $statement->bindValue(':password', $hashedPassword);
         $statement->execute();
-        header('Location: index.php');
+
+        // TODO ADD LOCTAION TO INDEX.PHP AFTER EXECUTION
+        header('Location: login.php');
     }
 }
+
 
 ?>
 
@@ -47,6 +52,18 @@ $Hpath = $_SERVER['DOCUMENT_ROOT'];
 $Hpath .= "/collage projects/min-mbs/includes/index_includes/main_hearder.php";
 include_once($Hpath);
 ?>
+
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+    echo
+    '<div class="alert">
+    
+    <p> <span>SUCCES!</span> Your account has been created now login to continue booking movies</p>
+    
+    </div>
+    ';
+} ?>
 
 <!-- SIGNIN-CONTENT -->
 
@@ -79,6 +96,13 @@ include_once($Hpath);
 
             <label for="password">Password :</label>
             <input type="password" name="password" id="">
+
+        </div>
+
+        <div class="password-box">
+
+            <label for="password">Confirm Password :</label>
+            <input type="password" name="confirmPassword" id="">
 
         </div>
 
