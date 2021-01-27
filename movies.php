@@ -2,6 +2,15 @@
 
 require 'db_connect.php';
 
+session_start();
+
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
+    header('Location: register_validation/login.php');
+    $username = '';
+    $password = '';
+    exit;
+}
+
 include_once 'includes/index_includes/main_hearder.php'
 
 ?>

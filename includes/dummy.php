@@ -1,12 +1,6 @@
 <?php
 
-$cssPath = $_SERVER['DOCUMENT_ROOT'];
-$cssPath = "/collage projects/min-mbs/css/global_styles.css";
-
-$resrcPath = $_SERVER['DOCUMENT_ROOT'];
-$resrcPath = "/collage projects/min-mbs/resrc/bg_video.mp4";
-
-// NAV BAR PATHS
+require 'db_connect.php';
 
 $PathIN = $_SERVER['DOCUMENT_ROOT'];
 $PathIN = "/collage projects/min-mbs/index.php";
@@ -26,12 +20,14 @@ $PathLO = "/collage projects/min-mbs/register_validation/login.php";
 $PathLOu = $_SERVER['DOCUMENT_ROOT'];
 $PathLOu = "/collage projects/min-mbs/register_validation/logout.php";
 
-$logoutbtn = '<a href="' . $PathLOu . '" class="nav-links">Logout</a>';
-$loginbtn = '<a href="' . $PathLO . '" class="nav-links">Login/Signin</a>';
+// $nologged = '<a href="' . $PathLO . '" class="nav-links">Login/Signin</a>';
+
+// $yeslogged = '<a href="' . $PathLO . '" class="nav-links">Logout</a>';
+
+
 
 ?>
 
-<!-- HTML -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,11 +38,13 @@ $loginbtn = '<a href="' . $PathLO . '" class="nav-links">Login/Signin</a>';
     <title>MIN-BMS 🎭</title>
 
     <!-- CSS-STYLES -->
+    <?php $cssPath = $_SERVER['DOCUMENT_ROOT'];
+    $cssPath = "/collage projects/min-mbs/css/global_styles.css"; ?>
     <link rel="stylesheet" href="<?php echo $cssPath; ?>">
 
     <!-- GOOGLE-FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- ALL TEXT FACE Poppins -- SPECIAL TEXT FACE Yellowtail -->
+    <!-- ALL TEXT FACE 'Poppins' -- SPECIAL TEXT FACE 'Yellowtail' -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Yellowtail&display=swap" rel="stylesheet">
 
 </head>
@@ -55,6 +53,9 @@ $loginbtn = '<a href="' . $PathLO . '" class="nav-links">Login/Signin</a>';
 
     <!-- BG-VIDEO -->
     <section class="showcase">
+
+        <?php $resrcPath = $_SERVER['DOCUMENT_ROOT'];
+        $resrcPath = "/collage projects/min-mbs/resrc/bg_video.mp4"; ?>
 
         <video src="<?php echo $resrcPath; ?>" muted loop autoplay></video>
 
@@ -77,14 +78,22 @@ $loginbtn = '<a href="' . $PathLO . '" class="nav-links">Login/Signin</a>';
 
                 <a href="<?php echo $PathMY; ?>" class="nav-links">My Movies</a>
 
+                <!-- TODO -->
+                <!-- change the text in this from 'login' to 'Welcom User Name' after the user logs or sign in -->
+
                 <?php
 
-                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                // if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
 
-                    echo $logoutbtn;
-                } else {
-                    echo $loginbtn;
-                }
+                // } else {
+
+                // }
+
+                echo '<a href="' . $PathLO . '" class="nav-links">Logout</a>';
+
+                echo '<a href="' . $PathLO . '" class="nav-links">Login/Signin</a>';
+
+
                 ?>
 
             </div>
@@ -92,17 +101,3 @@ $loginbtn = '<a href="' . $PathLO . '" class="nav-links">Login/Signin</a>';
         </div>
 
     </div>
-
-
-
-
-    <?php
-
-    // if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-
-    // } else {
-
-    // }
-
-
-    ?>

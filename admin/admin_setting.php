@@ -21,8 +21,17 @@ include_once($Hpath);
     <p>This website is build and designed by the
         admin and can only person to control the website. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem id quae, voluptate architecto obcaecati esse nesciunt! Voluptates rerum et, ducimus, veniam architecto itaque ipsam unde molestias, sit cum vero nobis.</p>
 
+    <?php
 
-    <button class="cancel">Log out</button>
+    session_start();
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+
+        echo '<a href="admin_logout.php" class="cancel">Log out</a>';
+    }
+
+    ?>
+
+
 
 
 
