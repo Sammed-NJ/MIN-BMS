@@ -22,34 +22,40 @@ include_once($Hpath);
                 <th>Movie Name</th>
                 <th>About Movie</th>
                 <th>Cost / Head</th>
-                <th>Time of Added</th>
+                <th>Time of Movie Added</th>
                 <th>Action</th>
             </tr>
         </thead>
 
         <tbody>
 
+            <?php
+            $sql = "SELECT * FROM `movies`";
+            $result = mysqli_query($conn, $sql);
+            $sno = 0;
+            while ($row = mysqli_fetch_assoc($result)) : ?>
+                <tr>
+                    <td><?php echo $sno = $sno + 1; ?></td>
 
-            <tr>
-                <td></td>
+                    <td><?php echo $row['mov_title']; ?></td>
 
-                <td></td>
+                    <td><?php echo $row['mov_desc']; ?></td>
 
-                <td></td>
+                    <td><?php echo $row['CPD']; ?></td>
 
-                <td></td>
+                    <td><?php echo $row['create_date']; ?></td>
 
-                <td></td>
+                    <td class="sider">
 
-                <td class="sider">
+                        <a href="update_movie.php?
+                        sno=<?php echo $row['mov_id'] ?>" class="order-a">Edit</a>
 
-                    <a href="update_movie.php?id=<?php echo $movies['id']; ?>" class="order-a">Edit</a>
+                        <button type="submit" class="cancel">Delete</button>
 
-                    <button type="submit" class="cancel">Delete</button>
+                    </td>
 
-                </td>
-
-            </tr>
+                </tr>
+            <?php endwhile; ?>
 
 
         </tbody>

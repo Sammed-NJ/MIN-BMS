@@ -11,6 +11,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     exit;
 }
 
+
 include_once 'includes/index_includes/main_hearder.php'
 
 ?>
@@ -27,9 +28,9 @@ include_once 'includes/index_includes/main_hearder.php'
             <tr>
                 <th>Number</th>
                 <th>Movie Name</th>
-                <th>Rating</th>
-                <th>Directer & (cast)</th>
-                <th>THeater</th>
+                <th>Description</th>
+                <th>Cost / Head</th>
+                <th>Theater</th>
                 <th>NO.of Seats</th>
                 <th>Date & Time</th>
                 <th>Book</th>
@@ -37,46 +38,56 @@ include_once 'includes/index_includes/main_hearder.php'
         </thead>
 
         <tbody>
-            <tr>
+
+            <?php
+            $sql = "SELECT * FROM `movies`";
+            $result = mysqli_query($conn, $sql);
+            $sno = 0;
+            while ($row = mysqli_fetch_assoc($result)) : ?>
+
+                <tr>
 
 
-                <td></td>
-                <td></td>
-                <td>⭐</td>
-                <td></td>
+                    <td><?php echo $sno = $sno + 1 ?></td>
+                    <td><?php echo $row['mov_title'] ?></td>
+                    <td><?php echo $row['mov_desc'] ?>⭐</td>
+                    <td><?php echo $row['CPD'] ?> Rs</td>
 
-                <td>
-                    <select class="theater" name="seats" id="">
-                        <option disabled>select theater</option>
-                        <option value="">Max Cenima</option>
-                        <option value="">Icons Films</option>
-                        <option value="">Globe Cenima</option>
-                    </select>
-                </td>
+                    <td>
+                        <select class="theater" name="seats" id="">
+                            <option disabled>select theater</option>
+                            <option value="">Max Cenima</option>
+                            <option value="">Icons Films</option>
+                            <option value="">Globe Cenima</option>
+                        </select>
+                    </td>
 
-                <td>
-                    <select name="seats" id="">
-                        <option disabled>select seats</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                        <option value="">6</option>
-                        <option value="">7</option>
-                        <option value="">8</option>
-                        <option value="">9</option>
-                        <option value="">10</option>
-                    </select>
-                </td>
-                <td>
-                    <input type="datetime-local" name="" id="">
-                </td>
-                <td>
-                    <button class="order">Book Now</button>
-                </td>
+                    <td>
+                        <select name="seats" id="">
+                            <option disabled>select seats</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                            <option value="">6</option>
+                            <option value="">7</option>
+                            <option value="">8</option>
+                            <option value="">9</option>
+                            <option value="">10</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="datetime-local" name="" id="">
+                    </td>
+                    <td>
+                        <button class="order">Book Now</button>
+                    </td>
 
-            </tr>
+                </tr>
+
+            <?php endwhile; ?>
+
         </tbody>
 
     </table>
