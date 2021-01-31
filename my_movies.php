@@ -30,13 +30,13 @@ include_once 'includes/index_includes/main_hearder.php'
         <thead>
             <tr>
                 <th>Number</th>
-                <th>Movie Name</th>
                 <th>User Name</th>
+                <th>Movie Name</th>
                 <th>Theater</th>
                 <th>NO.of Seats</th>
                 <th>Date & Time</th>
                 <th>Total Amount</th>
-                <th>Book</th>
+                <!-- <th>Book</th> -->
             </tr>
         </thead>
 
@@ -51,9 +51,9 @@ include_once 'includes/index_includes/main_hearder.php'
                 <tr>
                     <td><?php echo $sno = $sno + 1; ?></td>
 
-                    <td><?php echo $row['mov_title']; ?></td>
-
                     <td><?php echo $row['U_name']; ?></td>
+
+                    <td><?php echo $row['mov_title']; ?></td>
 
                     <td><?php echo $row['M_place']; ?></td>
 
@@ -63,9 +63,9 @@ include_once 'includes/index_includes/main_hearder.php'
 
                     <td><?php echo $row['tital_amount']; ?></td>
 
-                    <td>
+                    <!-- <td>
                         <button class="submit">Download</button>
-                    </td>
+                    </td> -->
 
                 </tr>
 

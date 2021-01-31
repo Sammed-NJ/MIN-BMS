@@ -39,7 +39,7 @@ include_once($Hpath);
 
                     <td><?php echo $row['mov_title']; ?></td>
 
-                    <td><?php echo $row['mov_desc']; ?></td>
+                    <td><?php echo $row['mov_desc']; ?>⭐</td>
 
                     <td><?php echo $row['CPD']; ?></td>
 
