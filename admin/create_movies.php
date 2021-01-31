@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if (!empty($mov_title) && !empty($mov_desc) && !empty($CPD)) {
 
-        $sql = "    INSERT INTO `movies` (`mov_title`, `mov_desc`, `CPD`) VALUES ('$mov_title', '$mov_desc', '$CPD')";
+        $sql = "INSERT INTO `movies` (`mov_title`, `mov_desc`, `CPD`) VALUES ('$mov_title', '$mov_desc', '$CPD')";
         $result = mysqli_query($conn, $sql);
         header('Location: admin_movies.php');
     }

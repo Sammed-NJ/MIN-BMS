@@ -619,8 +619,16 @@ input {
   width: 30rem;
 }
 
+input[type="date"] {
+  width: 12rem;
+}
+
+#time {
+  width: 10rem;
+}
+
 select {
-  width: 5rem;
+  width: 11rem;
 }
 
 input,

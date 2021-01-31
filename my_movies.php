@@ -1,5 +1,9 @@
 <?php
 
+$CONpath = $_SERVER['DOCUMENT_ROOT'];
+$CONpath .= "/collage projects/min-mbs/db_connect.php";
+require($CONpath);
+
 session_start();
 
 if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
@@ -8,6 +12,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] != true) {
     $password = '';
     exit;
 }
+
+$uname = $_SESSION['Uname'];
 
 include_once 'includes/index_includes/main_hearder.php'
 
@@ -25,37 +31,45 @@ include_once 'includes/index_includes/main_hearder.php'
             <tr>
                 <th>Number</th>
                 <th>Movie Name</th>
+                <th>User Name</th>
                 <th>Theater</th>
                 <th>NO.of Seats</th>
                 <th>Date & Time</th>
+                <th>Total Amount</th>
                 <th>Book</th>
             </tr>
         </thead>
 
         <tbody>
 
-            <tr>
-                <td>1</td>
+            <?php
+            $sql = "SELECT * FROM `booking` WHERE U_name = '$uname'";
+            $result = mysqli_query($conn, $sql);
+            $sno = 0;
+            while ($row = mysqli_fetch_assoc($result)) : ?>
 
-                <td>Attack On Titan</td>
+                <tr>
+                    <td><?php echo $sno = $sno + 1; ?></td>
 
-                <td>
-                    Icons Films
-                </td>
+                    <td><?php echo $row['mov_title']; ?></td>
 
-                <td>
-                    3
-                </td>
+                    <td><?php echo $row['U_name']; ?></td>
 
-                <td>
-                    23/04/2021 - 09:30am
-                </td>
+                    <td><?php echo $row['M_place']; ?></td>
 
-                <td>
-                    <button class="submit">Print</button>
-                </td>
+                    <td><?php echo $row['N_seats']; ?></td>
 
-            </tr>
+                    <td><?php echo $dt = '' . $row['M_date'] . '-' . $row['M_time'];  ?></td>
+
+                    <td><?php echo $row['tital_amount']; ?></td>
+
+                    <td>
+                        <button class="submit">Download</button>
+                    </td>
+
+                </tr>
+
+            <?php endwhile; ?>
 
         </tbody>
 

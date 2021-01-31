@@ -31,10 +31,6 @@ include_once($Hpath);
 
     ?>
 
-
-
-
-
 </div>
 
 <?php

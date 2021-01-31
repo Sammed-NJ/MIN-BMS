@@ -1,4 +1,8 @@
 <?php
+$CONpath = $_SERVER['DOCUMENT_ROOT'];
+$CONpath .= "/collage projects/min-mbs/db_connect.php";
+require($CONpath);
+
 $Hpath = $_SERVER['DOCUMENT_ROOT'];
 $Hpath .= "/collage projects/min-mbs/includes/admin_includes/admin_header.php";
 include_once($Hpath);
@@ -13,30 +17,43 @@ include_once($Hpath);
 
         <thead>
             <tr>
-                <th>S.No</th>
+                <th>Number</th>
                 <th>Movie Name</th>
-                <th>User ID</th>
+                <th>User Name</th>
                 <th>Theater</th>
-                <th>No of Seats</th>
+                <th>NO.of Seats</th>
                 <th>Date & Time</th>
+                <th>Total Amount</th>
             </tr>
         </thead>
 
         <tbody>
-            <tr>
-                <td>1</td>
 
-                <td>Attack On Titan</td>
+            <?php
+            $sql = "SELECT * FROM `booking`";
+            $result = mysqli_query($conn, $sql);
+            $sno = 0;
+            while ($row = mysqli_fetch_assoc($result)) : ?>
 
-                <td>sammednj13@gmail.com</td>
+                <tr>
+                    <td><?php echo $sno = $sno + 1; ?></td>
 
-                <td>Max Cienima</td>
+                    <td><?php echo $row['mov_title']; ?></td>
 
-                <td>4</td>
+                    <td><?php echo $row['U_name']; ?></td>
 
-                <td>20/08/2021 - 9:30pm</td>
+                    <td><?php echo $row['M_place']; ?></td>
 
-            </tr>
+                    <td><?php echo $row['N_seats']; ?></td>
+
+                    <td><?php echo $dt = '' . $row['M_date'] . '-' . $row['M_time'];  ?></td>
+
+                    <td><?php echo $row['tital_amount']; ?></td>
+
+                </tr>
+
+            <?php endwhile; ?>
+
         </tbody>
 
     </table>

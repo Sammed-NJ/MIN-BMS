@@ -26,20 +26,32 @@ include_once($Hpath);
         </thead>
 
         <tbody>
+            <?php
+            $sql = "SELECT * FROM `users`";
+            $result = mysqli_query($conn, $sql);
+            $sno = 0;
+            while ($row = mysqli_fetch_assoc($result)) : ?>
+                <tr>
+                    <td><?php echo $sno = $sno + 1 ?></td>
 
-            <tr>
-                <td></td>
+                    <td><?php echo $row['uName'] ?></td>
 
-                <td></td>
+                    <td><?php echo $row['time_stamp'] ?></td>
 
-                <td></td>
+                    <td>
 
-                <td>
-                    <button class="cancel" type="submit" name="remove_user">Remove</button>
+                        <form action="delete_user.php" method="post">
 
-                </td>
+                            <input type="hidden" name="id" value="<?php echo $row['user_id']; ?>">
+                            <button class="cancel" type="submit" name="remove_user">Remove</button>
 
-            </tr>
+                        </form>
+
+                    </td>
+
+                </tr>
+
+            <?php endwhile; ?>
 
         </tbody>
 

@@ -47,10 +47,14 @@ include_once($Hpath);
 
                     <td class="sider">
 
-                        <a href="update_movie.php?
-                        sno=<?php echo $row['mov_id'] ?>" class="order-a">Edit</a>
+                        <a href="update_movie.php?id=<?php echo $row['mov_id']; ?>" class="order-a">Edit</a>
 
-                        <button type="submit" class="cancel">Delete</button>
+                        <form action="delete_movie.php" method="post">
+
+                            <input type="hidden" name="id" value="<?php echo $row['mov_id']; ?>">
+                            <button type="submit" class="cancel">Delete</button>
+
+                        </form>
 
                     </td>
 
